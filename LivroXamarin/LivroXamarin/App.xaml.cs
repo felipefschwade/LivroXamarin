@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LivroXamarin.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace LivroXamarin
         {
             InitializeComponent();
 
-            MainPage = new LivroXamarin.MainPage();
+            MainPage = new NavigationPage(new MenuPage());
         }
 
         protected override void OnStart()

@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace LivroXamarin
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace LivroXamarin.Views
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class GarconsNewPage : ContentPage
     {
-        public MainPage()
+        public GarconsNewPage()
         {
             InitializeComponent();
         }
