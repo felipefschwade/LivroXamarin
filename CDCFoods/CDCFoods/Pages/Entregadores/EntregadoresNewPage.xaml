@@ -21,17 +21,15 @@
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"></RowDefinition>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                    <RowDefinition Height="Auto"></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Image Source="icone_entregador.png" Grid.Row="0" Grid.Column="0"></Image>
-                                <Label Grid.Row="1" Grid.Column="1" Text="Novo Entregador" Font="24" TextColor="Blue" HorizontalOptions="Start" VerticalOptions="Center"/>
-                                <Label Grid.Row="2" Grid.Column="1" Text="Id" Font="Bold, 24" x:Name="identregador" VerticalOptions="Center" TextColor="Blue" HorizontalOptions="End"/>
+                                <Image Source="entregador_icone.png" Grid.Row="0" Grid.Column="0"></Image>
+                                <Label Grid.Row="0" Grid.Column="1" Text="Novo Entregador" Font="24" TextColor="Blue" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="Id" Font="Bold, 24" x:Name="identregador" VerticalOptions="Center" TextColor="Blue" HorizontalOptions="End"/>
                             </Grid>
                         </StackLayout>
                     </Frame>

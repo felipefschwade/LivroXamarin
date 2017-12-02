@@ -152,6 +152,9 @@
   <ItemGroup>
     <BundleResource Include="Resources\icone_entregadores.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\entregador_icone.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
