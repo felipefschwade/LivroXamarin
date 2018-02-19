@@ -5,6 +5,6 @@
             x:Class="CDCFoods.Pages.ItensCardapio.TiposItensCardapioPage">
     <TabbedPage.Children>
         <views:TiposItensCardapioListPage Title="Listagem" Icon="icone_list.png" x:Name="listagem"/>
-        <views:TiposItensCardapioNewPage Title="Inserir Novo" Icon="icone_new.png" x:Name="inserir"/>
+        <views:ItensNewPage Title="Inserir Novo" Icon="icone_new.png" x:Name="inserir"/>
     </TabbedPage.Children>
 </TabbedPage>

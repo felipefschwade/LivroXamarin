@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CDCFoods.Model
 {
-    public class TipoItemMenu
+    public class TipoItemCardapio
     {
         public long Id { get; set; }
         public string Nome { get; set; }

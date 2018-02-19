@@ -1,19 +1,20 @@
 ﻿using CDCFoods.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CDCFoods.Dal
 {
-    public class TipoItemMenuDal
+    public class TipoItemCardapioDal
     {
-        private ObservableCollection<TipoItemMenu> TipoItemMenu = new ObservableCollection<TipoItemMenu>();
+        private ObservableCollection<TipoItemCardapio> TiposItensCardapio = new ObservableCollection<TipoItemCardapio>();
 
-        private static TipoItemMenuDal EntregadorInstance = new TipoItemMenuDal();
+        private static TipoItemCardapioDal EntregadorInstance = new TipoItemCardapioDal();
 
-        private TipoItemMenuDal()
+        private TipoItemCardapioDal()
         {
             TiposItensCardapio.Add(new TipoItemCardapio()
             {
@@ -41,19 +42,19 @@ namespace CDCFoods.Dal
             });
         }
 
-        public static TipoItemMenuDal GetInstance()
+        public static TipoItemCardapioDal GetInstance()
         {
             return EntregadorInstance;
         }
 
-        public ObservableCollection<TipoItemMenuDal> GetAll()
+        public ObservableCollection<TipoItemCardapio> GetAll()
         {
-            return TipoItemMenu;
+            return TiposItensCardapio;
         }
 
-        public void AddEntregador(TipoItemMenu item)
+        public void AddEntregador(TipoItemCardapio item)
         {
-            TipoItemMenu.Add(item);
+            TiposItensCardapio.Add(item);
         }
 
     }

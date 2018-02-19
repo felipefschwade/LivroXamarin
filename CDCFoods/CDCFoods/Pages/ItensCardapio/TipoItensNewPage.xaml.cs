@@ -13,11 +13,9 @@ namespace CDCFoods.Pages.ItensCardapio
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ItensNewPage : ContentPage
     {
-        private TipoItemMenuDal dalTipoItemCardapio = TipoItemMenuDal.GetInstance();
         public ItensNewPage()
         {
             InitializeComponent();
-            lvTiposItensCardapio.ItemsSource = dalTipoItemCardapio.GetAll();
         }
     }
 }

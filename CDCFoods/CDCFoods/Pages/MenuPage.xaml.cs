@@ -1,5 +1,6 @@
 ﻿using CDCFoods.Pages.Entregadores;
 using CDCFoods.Pages.Garcons;
+using CDCFoods.Pages.ItensCardapio;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
