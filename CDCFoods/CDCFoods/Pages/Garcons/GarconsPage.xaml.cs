@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace CDCFoods.Pages.Garcons
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GarconsPage : ContentPage
+    public partial class GarconsPage : TabbedPage
     {
         public GarconsPage()
         {

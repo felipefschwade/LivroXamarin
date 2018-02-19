@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CDCFoods.Pages.Garcons.GarconsPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Garcons Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+             xmlns:views="clr-namespace:CDCFoods.Pages.Garcons"
+             x:Class="CDCFoods.Pages.Garcons.GarconsPage"
+            Title="Garçons">
+    <!--Pages can be added as references or inline-->
+    <TabbedPage.Children>
+        <views:GarconsListPage Title="Listagem" Icon="icone_list.png" x:Name="listagem" />
+        <views:GarconsNewPage Title="Inserir Novo" Icon="icone_new.png" x:Name="inserir" />
+    </TabbedPage.Children>
+</TabbedPage>
