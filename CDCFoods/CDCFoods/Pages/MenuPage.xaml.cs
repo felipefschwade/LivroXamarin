@@ -23,5 +23,10 @@ namespace CDCFoods.Pages
         {
             await Navigation.PushAsync(new EntregadoresPage());
         }
+
+        private async void TiposItensCardapio_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TiposItensCardapioPage());
+        }
     }
 }

@@ -7,6 +7,7 @@
         <StackLayout VerticalOptions="Center">
             <Button Text="Garçons" Image="icone_garcons.png" Clicked="Garcons_Clicked"/>
             <Button Text="Entregadores" Image="icone_entregadores.png" Clicked="Entregadores_Clicked" />
+            <Button Text="Tipos de Itens" Image="icone_tipositenscardapio.png" Clicked="TiposItensCardapio_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
