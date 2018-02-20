@@ -42,6 +42,11 @@ namespace CDCFoods.Dal
             });
         }
 
+        public void Remove(TipoItemCardapio item)
+        {
+            TiposItensCardapio.Remove(item);
+        }
+
         public static TipoItemCardapioDal GetInstance()
         {
             return EntregadorInstance;

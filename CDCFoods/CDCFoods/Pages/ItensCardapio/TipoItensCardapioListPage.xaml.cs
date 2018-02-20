@@ -1,4 +1,5 @@
 ﻿using CDCFoods.Dal;
+using CDCFoods.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +20,22 @@ namespace CDCFoods.Pages.ItensCardapio
             InitializeComponent();
             lvTiposItensCardapio.ItemsSource = dalTipoItemCardapio.GetAll();
         }
+
+        public async void OnAlterarClick(object sender, EventArgs args)
+        {
+            await DisplayAlert("Alterar", "Alterando", "OK");
+        }
+
+        public async void OnRemoverClick(object sender, EventArgs args)
+        {
+            var mi = ((MenuItem)sender);
+            var item = mi.CommandParameter as TipoItemCardapio;
+            var confirma = await DisplayAlert("Confirmação de exclusão", $"Confirma excluir o item {item.Nome.ToUpper()} ?", "Sim", "Não");
+            if (confirma)
+            {
+                dalTipoItemCardapio.Remove(item);
+            }
+        }
+
     }
 }
