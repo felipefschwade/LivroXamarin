@@ -52,7 +52,7 @@ namespace CDCFoods.Dal
             return TiposItensCardapio;
         }
 
-        public void AddEntregador(TipoItemCardapio item)
+        public void Add(TipoItemCardapio item)
         {
             TiposItensCardapio.Add(item);
         }

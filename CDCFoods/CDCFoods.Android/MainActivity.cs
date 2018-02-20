@@ -1,5 +1,6 @@
 ﻿using System;
-
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -14,6 +15,7 @@ namespace CDCFoods.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+            Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity = this;
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
@@ -22,6 +24,13 @@ namespace CDCFoods.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+
     }
 }
 
