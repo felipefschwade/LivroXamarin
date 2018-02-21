@@ -62,5 +62,9 @@ namespace CDCFoods.Dal
             TiposItensCardapio.Add(item);
         }
 
+        public void Update(TipoItemCardapio tipoItemCardapio)
+        {
+            this.TiposItensCardapio[this.TiposItensCardapio.IndexOf(tipoItemCardapio)] = tipoItemCardapio;
+        }
     }
 }

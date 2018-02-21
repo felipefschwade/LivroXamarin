@@ -23,7 +23,9 @@ namespace CDCFoods.Pages.ItensCardapio
 
         public async void OnAlterarClick(object sender, EventArgs args)
         {
-            await DisplayAlert("Alterar", "Alterando", "OK");
+            var mi = (MenuItem)sender;
+            var item = mi.CommandParameter as TipoItemCardapio;
+            await Navigation.PushModalAsync(new TipoItensCardapioEditPage(item));
         }
 
         public async void OnRemoverClick(object sender, EventArgs args)
