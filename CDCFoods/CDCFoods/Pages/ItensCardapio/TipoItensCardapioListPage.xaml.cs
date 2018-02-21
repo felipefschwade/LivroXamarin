@@ -14,7 +14,7 @@ namespace CDCFoods.Pages.ItensCardapio
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TiposItensCardapioListPage : ContentPage
     {
-        private TipoItemCardapioDal dalTipoItemCardapio = TipoItemCardapioDal.GetInstance();
+        private TipoItemCardapioDal dalTipoItemCardapio = new TipoItemCardapioDal();
         public TiposItensCardapioListPage()
         {
             InitializeComponent();
@@ -35,8 +35,15 @@ namespace CDCFoods.Pages.ItensCardapio
             var confirma = await DisplayAlert("Confirmação de exclusão", $"Confirma excluir o item {item.Nome.ToUpper()} ?", "Sim", "Não");
             if (confirma)
             {
-                dalTipoItemCardapio.Remove(item);
+                dalTipoItemCardapio.DeleteById(item.Id);
+                lvTiposItensCardapio.ItemsSource = dalTipoItemCardapio.GetAll();
             }
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            lvTiposItensCardapio.ItemsSource = dalTipoItemCardapio.GetAll();
         }
 
     }

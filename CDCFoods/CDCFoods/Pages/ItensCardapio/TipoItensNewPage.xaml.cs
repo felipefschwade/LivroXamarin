@@ -17,7 +17,7 @@ namespace CDCFoods.Pages.ItensCardapio
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TipoItensNewPage : ContentPage
     {
-        private TipoItemCardapioDal dalTiposItensCardapio = TipoItemCardapioDal.GetInstance();
+        private TipoItemCardapioDal dalTiposItensCardapio = new TipoItemCardapioDal();
         private string caminhoArquivo;
         public TipoItensNewPage()
         {
@@ -113,7 +113,6 @@ namespace CDCFoods.Pages.ItensCardapio
             {
                 dalTiposItensCardapio.Add(new TipoItemCardapio()
                 {
-                    Id = Convert.ToUInt32(idTipoItemCardapio.Text),
                     Nome = nome.Text,
                     CaminhoArquivoFoto = caminhoArquivo
                 });

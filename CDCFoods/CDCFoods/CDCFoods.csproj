@@ -41,6 +41,7 @@
     <Compile Include="Dal\EntregadorDal.cs" />
     <Compile Include="Dal\GarcomDal.cs" />
     <Compile Include="Dal\TipoItemCardapioDal.cs" />
+    <Compile Include="Infra\IDatabaseConnection.cs" />
     <Compile Include="Model\TipoItemCardapio.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

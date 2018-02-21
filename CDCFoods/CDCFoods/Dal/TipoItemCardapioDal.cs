@@ -1,70 +1,47 @@
-﻿using CDCFoods.Model;
+﻿using CDCFoods.Infra;
+using CDCFoods.Model;
+using SQLite.Net;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace CDCFoods.Dal
 {
     public class TipoItemCardapioDal
     {
         private ObservableCollection<TipoItemCardapio> TiposItensCardapio = new ObservableCollection<TipoItemCardapio>();
+        private SQLiteConnection conn;
 
-        private static TipoItemCardapioDal EntregadorInstance = new TipoItemCardapioDal();
-
-        private TipoItemCardapioDal()
+        public TipoItemCardapioDal()
         {
-            TiposItensCardapio.Add(new TipoItemCardapio()
-            {
-                Id = 1,
-                Nome = "Pizza",
-                CaminhoArquivoFoto = "pizzas.png"
-            });
-            TiposItensCardapio.Add(new TipoItemCardapio()
-            {
-                Id = 2,
-                Nome = "Bebidas",
-                CaminhoArquivoFoto = "bebidas.png"
-            });
-            TiposItensCardapio.Add(new TipoItemCardapio()
-            {
-                Id = 3,
-                Nome = "Saladas",
-                CaminhoArquivoFoto = "saladas.png"
-            });
-            TiposItensCardapio.Add(new TipoItemCardapio()
-            {
-                Id = 4,
-                Nome = "Carnes",
-                CaminhoArquivoFoto = "carnes.png"
-            });
+            conn = DependencyService.Get<IDatabaseConnection>().GetConnection();
+            conn.CreateTable<TipoItemCardapio>();
         }
 
-        public void Remove(TipoItemCardapio item)
+        public IEnumerable<TipoItemCardapio> GetAll()
         {
-            TiposItensCardapio.Remove(item);
+            return conn.Table<TipoItemCardapio>().OrderBy(i => i.Nome).ToList();
         }
 
-        public static TipoItemCardapioDal GetInstance()
+        public TipoItemCardapio GetItemById(long id)
         {
-            return EntregadorInstance;
+            return conn.Table<TipoItemCardapio>().FirstOrDefault(t => t.Id == id);
         }
-
-        public ObservableCollection<TipoItemCardapio> GetAll()
+        public void DeleteById(long? id)
         {
-            return TiposItensCardapio;
+            conn.Delete<TipoItemCardapio>(id);
         }
-
-        public void Add(TipoItemCardapio item)
+        public void Add(TipoItemCardapio tipoItemCardapio)
         {
-            TiposItensCardapio.Add(item);
+            conn.Insert(tipoItemCardapio);
         }
-
         public void Update(TipoItemCardapio tipoItemCardapio)
         {
-            this.TiposItensCardapio[this.TiposItensCardapio.IndexOf(tipoItemCardapio)] = tipoItemCardapio;
+            conn.Update(tipoItemCardapio);
         }
     }
 }

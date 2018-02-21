@@ -13,7 +13,7 @@ namespace CDCFoods.Pages.ItensCardapio
     {
         private TipoItemCardapio tipoItemCardapio;
         private string caminhoArquivo;
-        private TipoItemCardapioDal dalTiposItensCardapio = TipoItemCardapioDal.GetInstance();
+        private TipoItemCardapioDal dalTiposItensCardapio = new TipoItemCardapioDal();
         public TipoItensCardapioEditPage(TipoItemCardapio tipoItemCardapio)
         {
             InitializeComponent();
