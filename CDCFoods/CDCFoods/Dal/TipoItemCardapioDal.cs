@@ -1,12 +1,9 @@
 ﻿using CDCFoods.Infra;
 using CDCFoods.Model;
-using SQLite.Net;
-using System;
+using SQLite;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace CDCFoods.Dal

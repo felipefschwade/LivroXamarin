@@ -28,8 +28,6 @@ namespace CDCFoods.Droid
 		{
 			global::PCLStorage.Resource.String.ApplicationName = global::CDCFoods.Droid.Resource.String.ApplicationName;
 			global::PCLStorage.Resource.String.Hello = global::CDCFoods.Droid.Resource.String.Hello;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::CDCFoods.Droid.Resource.String.ApplicationName;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::CDCFoods.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::CDCFoods.Droid.Resource.Attribute.actionBarSize;
 		}
 		
